@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.table{
+    margin:  0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+    height: 640px;
+    border: 8px solid gray;
+}
+.white{
+    background-color: white;
+}
+.square{
+    font-size: 60px;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+}
+.green{
+    background-color: rgba(34, 139, 34, 0.71);
+}
+.figure{
+    cursor: pointer;
+}

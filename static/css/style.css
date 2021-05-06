@@ -1,0 +1,8 @@
+body {
+  background-image: url("/static/img/back.jpg");
+}
+
+a {
+    color: red;
+    font-size: 200px;
+}
