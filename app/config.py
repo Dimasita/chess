@@ -4,7 +4,7 @@ APP_SECRET_KEY = os.getenv('APP_SECRET_KEY')
 
 DATABASE_CONFIG = {
     'drivername': 'postgresql+psycopg2',
-    'host': os.getenv('DB_HOST'),
+    'host': 'db',
     'port': os.getenv('DB_PORT'),
     'username': os.getenv('DB_USER'),
     'password': os.getenv('DB_PASSWORD'),

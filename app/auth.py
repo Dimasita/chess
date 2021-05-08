@@ -20,7 +20,7 @@ def login() -> str:
 
 
 def authorize(state: str, token: str) -> None:
-    if not session['state'] or session['state'] != state:
+    if 'state' not in session or session['state'] != state:
         # log this
         return
 
