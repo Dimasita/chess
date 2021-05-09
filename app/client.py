@@ -1,13 +1,13 @@
 from flask import Flask, render_template, redirect, request, session, jsonify
 from config import APP_SECRET_KEY
-import auth
+from services import auth
 
 app = Flask(__name__)
 app.secret_key = APP_SECRET_KEY
 
 
 @app.route('/')
-def hello_world():
+def index():
     if 'user' not in session:
         return render_template('index.html')
     return render_template('game.html')
@@ -30,4 +30,4 @@ def authorize():
 
 @app.route('/error')
 def error():
-    return 'Yeba ti che delaesh???!'
+    return 'Page not found!', 404
