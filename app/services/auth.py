@@ -1,11 +1,13 @@
 import uuid
 import urllib.parse
 import requests
-from flask import Flask, render_template, redirect, request, session, jsonify
+from flask import request, session, jsonify
 from config import VK_OAUTH_CONFIG
 
 
 def login() -> str:
+    """Создает уникальную ссылку на страницу авторизации (Vk OAuth)"""
+
     state = uuid.uuid4().hex
     session['state'] = state
     params = {

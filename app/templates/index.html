@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello</title>
+    <title>{{ data.title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <a href="/login">ВОЙТИ</a>
+    {% if data.user %}
+        <a href="game">ИГРАТЬ</a>
+        <a href="api/logout">ВЫЙТИ</a>
+    {% else %}
+        <a href="api/login">ВОЙТИ</a>
+    {% endif %}
 </body>
 </html>
