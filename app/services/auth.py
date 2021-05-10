@@ -1,6 +1,7 @@
 import uuid
 import urllib.parse
 import requests
+from redis_init import r
 from flask import request, session, jsonify
 from config import VK_OAUTH_CONFIG
 
@@ -9,7 +10,7 @@ def login() -> str:
     """Создает уникальную ссылку на страницу авторизации (Vk OAuth)"""
 
     state = uuid.uuid4().hex
-    session['state'] = state
+    r.set('state', state, 600)
     params = {
         'client_id': VK_OAUTH_CONFIG['client_id'],
         'redirect_uri': VK_OAUTH_CONFIG['redirect_uri'],
@@ -22,11 +23,11 @@ def login() -> str:
 
 
 def authorize(state: str, token: str) -> None:
-    if 'state' not in session or session['state'] != state:
+    base_state = r.get('state')
+    if base_state != state:
         # log this
         return
 
-    session.pop('state', None)
     params = {
         'client_id': VK_OAUTH_CONFIG['client_id'],
         'client_secret': VK_OAUTH_CONFIG['client_secret'],

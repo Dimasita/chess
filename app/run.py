@@ -4,6 +4,7 @@ import api.server
 import client
 from db_init import Base, engine
 from models import *
+import redis_init
 
 
 if __name__ == "__main__":
