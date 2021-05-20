@@ -18,9 +18,17 @@ VK_OAUTH_CONFIG = {
 
     'client_id': os.getenv('VK_OAUTH_CLIENT_ID'),
     'client_secret': os.getenv('VK_OAUTH_CLIENT_SECRET'),
-    'redirect_uri': 'http://localhost/api/authorize',
+    'redirect_uri': 'http://localhost/authorize',
 
     'display': 'page',
     'scope': 'friends offline email',
     'response_type': 'code'
+}
+
+VK_API_CONFIG = {
+    'v': 5.89,
+    'lang': 'ru',
+    'urls': {
+        'get_users': 'https://api.vk.com/method/users.ggg'
+    }
 }
