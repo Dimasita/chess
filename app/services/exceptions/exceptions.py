@@ -1,12 +1,16 @@
 from flask import abort
 import functools
 
+"""
+После добавления исключения сюда, дописать его в __init__!!!!
+"""
+
 
 def handle_exceptions(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         try:
-            func(*args, **kwargs)
+            return func(*args, **kwargs)
         except BaseHttpException as e:
             abort(e.code, e.message)
 

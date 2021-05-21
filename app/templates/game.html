@@ -1,14 +1,9 @@
-<!doctype html>
-<html lang="ru">
-    <head>
-        <title>Шахматы</title>
-        <meta charset='utf-8' />
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    </head>
-    <body>
-    <div id="table" class="table"></div>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    </body>
-</html>
+{% set css_files = ['game.css'] %}
+{% set external_js_files = ['https://code.jquery.com/ui/1.12.1/jquery-ui.js'] %}
+{% set js_files = ['game.js'] %}
+
+{% include 'header.html'%}
+
+<div id="table" class="table"></div>
+
+{% include 'footer.html'%}

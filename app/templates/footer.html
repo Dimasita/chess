@@ -1,0 +1,15 @@
+<div class="footer">
+    <p>ChesS by DimasS</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+{% for link in external_js_files %}
+    <script src="{{ link }}"></script>
+{% endfor %}
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% for file in js_files %}
+    <script src="{{ url_for('static', filename='js/' + file) }}"></script>
+{% endfor %}
+
+</html>

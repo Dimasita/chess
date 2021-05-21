@@ -1,16 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ data.title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    {% if data.user %}
-        <a href="game">ИГРАТЬ</a>
-        <a href="logout">ВЫЙТИ</a>
-    {% else %}
-        <a href="login">ВОЙТИ</a>
-    {% endif %}
-</body>
-</html>
+{% set css_files = ['index.css'] %}
+
+{% include 'header.html'%}
+<div class="body">
+    <img src="{{ url_for('static', filename='img/back.jpg') }}">
+    <table>
+        <caption>Топ 10 рейтинга</caption>
+        <thead>
+            <td>Имя</td>
+            <td>Рейтинг</td>
+        </thead>
+        {% for user in data.top_rating_users %}
+        <tr>
+            <td>{{ user.name }} {{ user.surname }}</td>
+            <td>{{ user.rating }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% include 'footer.html'%}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if data.title %}{{ data.title }}{% else %}Chess Online{% endif %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% for file in css_files %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/' + file) }}">
+    {% endfor %}
+    {% for link in external_css_files %}
+        <link rel="stylesheet" href="{{ link }}">
+    {% endfor %}
+</head>
+
+<div class="header">
+    <a id="to_home" class="header_button" href="/">Домой</a>
+    <a id="start_play" class="header_button" href="/game">Играть</a>
+    <a id="start_spectate" class="header_button" href="/spectate">Смотреть</a>
+    {% if data.user %}
+        <a id="profile" class="header_button" href="/profile">Профиль</a>
+        <a id="logout" class="header_button" href="/logout">Выйти</a>
+    {% else %}
+        <a id="login" class="header_button" href="/login">Войти</a>
+    {% endif %}
+</div>

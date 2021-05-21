@@ -1,8 +1,37 @@
-body {
-  background-image: url("/static/img/back.jpg");
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
-a {
-    color: red;
-    font-size: 200px;
+.header {
+    background-color: aqua;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header_button {
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    padding-top: 20px;
+}
+
+.header_button:hover {
+    color: gray;
+}
+
+.footer {
+    background-color: black;
+    width: 100%;
+    height: 150px;
+}
+
+.footer p {
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0;
 }

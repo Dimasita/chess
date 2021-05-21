@@ -29,6 +29,6 @@ VK_API_CONFIG = {
     'v': 5.89,
     'lang': 'ru',
     'urls': {
-        'get_users': 'https://api.vk.com/method/users.ggg'
+        'get_users': 'https://api.vk.com/method/users.get'
     }
 }

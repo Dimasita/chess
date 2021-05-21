@@ -24,6 +24,6 @@ def _send_request_to_vk_api(method: str, token: str, **kwargs) -> Union[list, di
     )
     r = resp.json()
     if 'error' in r or 'response' not in r:
-        raise VkApiError
+        raise VkApiError(r['error'])
     data = resp.json()['response']
     return data
